@@ -7,7 +7,7 @@ plugins {
     id("com.gradle.plugin-publish") version "0.18.0" 
 }
 
-group = "io.github.ashishkujoy.embeddedKafka"
+group = "io.github.ashishkujoy.embeddedMongoDb"
 version = "0.0.1"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
@@ -28,24 +28,23 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.21")
-    implementation("io.github.embeddedkafka:embedded-kafka_2.13:3.2.0")
 }
 
 gradlePlugin {
     val greeting by plugins.creating {
-        id = "io.github.ashishkujoy.embeddedKafka"
-        implementationClass = "com.github.ashishkujoy.EmbeddedkafkaPlugin"
+        id = "io.github.ashishkujoy.embeddedMongodb"
+        implementationClass = "com.github.ashishkujoy.EmbeddedMongoDbPlugin"
         version = version
-        description = "A plugin to start/stop embedded kafka"
-        displayName = "Embedded Kafka"
+        description = "A plugin to start/stop embedded mongodb"
+        displayName = "Embedded Mongodb"
     }
 }
 
 
 
 pluginBundle {
-    website = "https://github.com/ashishkujoy/gradle-embedded-kafka-plugin"   
-    vcsUrl = "https://github.com/ashishkujoy/gradle-embedded-kafka-plugin"   
-    tags = listOf("kafka", "embedded kafka") 
+    website = "https://github.com/ashishkujoy/gradle-embedded-mongodb-plugin"   
+    vcsUrl = "https://github.com/ashishkujoy/gradle-embedded-mongodb-plugin"   
+    tags = listOf("mongodb", "embedded mongodb") 
 }
 
