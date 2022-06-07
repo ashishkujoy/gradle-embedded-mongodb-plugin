@@ -1,12 +1,9 @@
 package com.github.ashishkujoy
 
 import org.gradle.api.Action
-import org.gradle.api.Project
 import org.gradle.api.Plugin
+import org.gradle.api.Project
 import org.gradle.kotlin.dsl.create
-import org.gradle.kotlin.dsl.get
-import org.gradle.kotlin.dsl.withConvention
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 
 class EmbeddedMongoDbPlugin: Plugin<Project> {
     override fun apply(project: Project) {
@@ -25,5 +22,5 @@ class EmbeddedMongoDbPlugin: Plugin<Project> {
 
 }
 
-fun org.gradle.api.Project.`embeddedMongoDb`(configure: Action<MongoDbPluginExtension>): Unit =
+fun Project.`embeddedMongoDb`(configure: Action<MongoDbPluginExtension>): Unit =
     (this as org.gradle.api.plugins.ExtensionAware).extensions.configure("embeddedMongoDb", configure)

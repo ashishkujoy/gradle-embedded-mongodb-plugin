@@ -1,5 +1,6 @@
 package com.github.ashishkujoy
 
+import de.flapdoodle.embed.mongo.MongodExecutable
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.get
@@ -11,7 +12,10 @@ open class StopMongoDbTask : DefaultTask(){
     fun task() {
         
         println("Stoping Kafka.....")
-        
-        println("MongoDb stopped ...")
+        val mongod = project.extensions.getByName("mongod") as MongodExecutable
+        val time = measureTimeMillis {
+            mongod.stop()
+        }
+        println("MongoDb stopped in $time ....")
     }
 }

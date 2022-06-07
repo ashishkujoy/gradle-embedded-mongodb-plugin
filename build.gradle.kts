@@ -2,7 +2,7 @@ plugins {
     `java-gradle-plugin`
     `kotlin-dsl-base`
     java
-    id("org.jetbrains.kotlin.jvm") version "1.3.71"
+    id("org.jetbrains.kotlin.jvm") version "1.4.21"
     id("maven-publish") 
     id("com.gradle.plugin-publish") version "0.18.0" 
 }
@@ -28,10 +28,11 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.21")
+    implementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo:3.4.6")
 }
 
 gradlePlugin {
-    val greeting by plugins.creating {
+    val plugin by plugins.creating {
         id = "io.github.ashishkujoy.embeddedMongodb"
         implementationClass = "com.github.ashishkujoy.EmbeddedMongoDbPlugin"
         version = version
@@ -45,6 +46,6 @@ gradlePlugin {
 pluginBundle {
     website = "https://github.com/ashishkujoy/gradle-embedded-mongodb-plugin"   
     vcsUrl = "https://github.com/ashishkujoy/gradle-embedded-mongodb-plugin"   
-    tags = listOf("mongodb", "embedded mongodb") 
+    tags = listOf("mongodb", "embedded mongodb", "embedded")
 }
 
