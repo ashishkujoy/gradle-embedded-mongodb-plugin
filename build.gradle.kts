@@ -29,6 +29,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.21")
     implementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo:3.4.6")
+    implementation("org.mongodb:mongodb-driver-sync:3.12.1")
 }
 
 gradlePlugin {
